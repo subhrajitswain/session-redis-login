@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Session Redis Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .top { display:flex; justify-content:space-between; align-items:center; }
+    </style>
+</head>
+<body>
+<div class="top">
+    <h1>Dashboard</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <button type="submit">Logout</button>
+    </form>
+
+</div>
+
+<p>Welcome — you are authenticated. This app uses Redis for HTTP session storage.</p>
+</body>
+</html>
